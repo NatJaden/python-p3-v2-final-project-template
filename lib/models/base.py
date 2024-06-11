@@ -1,45 +1,43 @@
-from book import Book
-from author import Author
+from exercise import Exercise
+from workout_session import WorkoutSession
 
-Author.drop_table()
+Exercise.drop_table()
 
-Author.create_table()
+Exercise.create_table()
 
-author1 = Author.create(
-    first_name="F. Scott",
-    last_name="Fitzgerald",
-    nationality="American",
-    birthdate="1896-09-24"
+exercise1 = Exercise.create(
+    name="Running",
+    category="Cardio",
+    duration=30,
+    calories_burned=300
 )
 
-author2 = Author.create(
-    first_name="Harper",
-    last_name="Lee",
-    nationality="American",
-    birthdate="1926-04-28"
+exercise2 = Exercise.create(
+    name="Weightlifting",
+    category="Strength Training",
+    duration=45,
+    calories_burned=200
 )
-print(Author.find_by_last_name("Lee"))
-print(Author.get_all())
+print(Exercise.find_by_name("Weightlifting"))
+print(Exercise.get_all())
 
-Book.drop_table()
+WorkoutSession.drop_table()
 
-Book.create_table()
+WorkoutSession.create_table()
 
-book1 = Book.create(
-    title="The Great Gatsby",
-    author_id=author1.id,
-    genre="Novel",
-    description="A novel by F. Scott Fitzgerald, set in the Roaring Twenties.",
-)
-
-book2 = Book.create(
-    title="To Kill a Mockingbird",
-    author_id=author2.id,
-    genre="Fiction",
-    description="A novel by Harper Lee, set in the American South during the Great Depression.",
+workout_session1 = WorkoutSession.create(
+    date="2024-06-11",
+    duration=60,
+    exercise_id=exercise1.id,
+    notes="Morning workout session"
 )
 
-# Book.find_by_title("The Great Gatsby")
-# print(Book.get_all())
+workout_session2 = WorkoutSession.create(
+    date="2024-06-10",
+    duration=45,
+    exercise_id=exercise2.id,
+    notes="Evening workout session"
+)
 
-
+WorkoutSession.find_by_date("2024-06-11")
+print(WorkoutSession.get_all())
