@@ -17,13 +17,13 @@ def create_exercise():
         print("Error creating exercise: ", exc)
 
 def delete_exercise():
-    exercise_id= input("Enter the exercise's id: ")
+    exercise_name= input("Enter the exercise's name: ")
     try:
-        if exercise := Exercise.find_by_id(exercise_id):
+        if exercise := Exercise.find_by_name(exercise_name):
             exercise.delete()
-            print(f'exercise {exercise_id} deleted')
+            print(f'exercise {exercise_name} deleted')
         else:
-             print(f'exercise {exercise_id} not found')
+             print(f'exercise {exercise_name} not found')
     except Exception as e:
         print(f"Error deleting exercise: {e}")
 

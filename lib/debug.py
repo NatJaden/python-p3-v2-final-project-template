@@ -19,6 +19,13 @@ exercise2 = Exercise.create(
     duration=45,
     calories_burned=200
 )
+
+exercise3 = Exercise.create(
+    name="Pushups",
+    category="Strength Training",
+    duration=45,
+    calories_burned=500
+)
 print(Exercise.find_by_name("Weightlifting"))
 print(Exercise.get_all())
 
@@ -37,6 +44,12 @@ workout_session2 = WorkoutSession.create(
     date="2024-06-10",
     duration=45,
     exercise_id=exercise2.id,
+    notes="Evening workout session"
+)
+workout_session3 = WorkoutSession.create(
+    date="2024-07-10",
+    duration=60,
+    exercise_id=exercise3.id,
     notes="Evening workout session"
 )
 
