@@ -1,14 +1,5 @@
-from helpers import (
-    exit_program,
-    create_exercise,
-    delete_exercise,
-    display_exercises,
-    find_exercise_by_name,
-    create_workout_session,
-    delete_workout_session,
-    display_workout_session,
-    find_workout_session_by_date
-)
+#!/usr/bin/env python3
+from helpers import  exit_program, create_exercise, delete_exercise, display_exercises, find_exercise_by_name, create_workout_session, delete_workout_session, display_workout_session, find_workout_session_by_date
 
 def main():
     while True:

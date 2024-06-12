@@ -38,7 +38,6 @@ def find_exercise_by_name():
     print(exercise) if exercise else print(
         f'Exercise {name} not found')
 
-##########################################################3
 
 def create_workout_session():
     date = input("Enter session date (YYYY-MM-DD): ")
